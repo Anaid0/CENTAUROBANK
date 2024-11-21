@@ -36,4 +36,7 @@ export class AppComponent {
   goLogin(){
     this.router.navigate(["login"])
   }
+  goManage(){
+    this.router.navigate(["manageProduct"])
+  }
 }

@@ -24,7 +24,7 @@
                         </nav>
                         <nav *ngIf="adminLoged()">
                             <a mat-button>Inicio</a>
-                            <a mat-button>Administración Productos</a>
+                            <a mat-button (click)="goManage()">Administración Productos</a>
                             <a mat-button>Administración Usuarios</a>
                         </nav>
                     </mat-toolbar-row>
