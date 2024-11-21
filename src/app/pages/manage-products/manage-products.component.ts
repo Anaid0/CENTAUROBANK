@@ -8,37 +8,39 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./manage-products.component.css']
 })
 export class ManageProductsComponent {
-  solicitudForm: FormGroup;
+  productForm: FormGroup;
+  selectedProcess: string = 'Crear';
 
-  constructor(private fb: FormBuilder,
-    private snackbar: MatSnackBar
-  )
-   {
-    this.solicitudForm = this.fb.group({
-      nombres: ['', Validators.required],
-      apellidos: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
-      validacionCorreo: ['', [Validators.required, Validators.email]],
-      fechaNacimiento: ['', Validators.required],
-      tipoDocumento: ['', Validators.required],
-      numeroDocumento: ['', Validators.required],
-      fechaExpedicion: ['', Validators.required],
-      telefono: ['', Validators.required],
-      celular: ['', Validators.required],
-      adjuntoId: [null, Validators.required],
-      adjuntoEconomico: [null],
+  constructor(private fb: FormBuilder) {
+    this.productForm = this.fb.group({
+      productName: ['', Validators.required],
+      description: ['', Validators.required],
+      advantages: ['', Validators.required],
     });
   }
 
   onSubmit() {
-    if (this.solicitudForm.valid) {
-      this.snackbar.open('Formulario enviado con éxito, por favor revise su correo para validar el envio de este y este pendiente para la respuesta de su solicitud, siga las instrucciones que se le indican allí', 'Cerrar', {
-        duration: 3000
-      })
+    if (this.selectedProcess === 'Crear') {
+      console.log('Producto creado:', this.productForm.value);
     }
   }
 
-  onCancel() {
-    this.solicitudForm.reset();
+  editProduct() {
+    console.log('Editar producto:', this.productForm.value);
   }
+
+  deleteProduct() {
+    console.log('Producto eliminado');
+  }
+
+  cancel() {
+    this.productForm.reset();
+  }
+
+  onFileSelect(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      console.log('Archivo seleccionado:', input.files[0]);
+    }
+  }
 }

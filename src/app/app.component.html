@@ -13,17 +13,21 @@
                     <mat-toolbar-row>
                         <nav *ngIf="!adminLoged() && !userLoged()">
                             <a mat-button (click)="goHome()">Inicio</a>
-                            <a mat-button>Productos</a>
-                            <a mat-button>Contactanos</a>
+                            <a mat-button [matMenuTriggerFor]="menu">Productos</a>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item>Tarjeta de crédito</button>
+                                <button mat-menu-item>Crédito de consumo</button>
+                            </mat-menu>
+                            <a mat-button (click)="goContact()">Contactanos</a>
                         </nav>
                         <nav *ngIf="userLoged()">
-                            <a mat-button>Inicio</a>
-                            <a mat-button>Solicitud Productos</a>
+                            <a mat-button (click)="goHome()">Inicio</a>
+                            <a mat-button (click)="goRequest()">Solicitud Productos</a>
                             <a mat-button>Documentos</a>
                             <a mat-button>Movimientos</a>
                         </nav>
                         <nav *ngIf="adminLoged()">
-                            <a mat-button>Inicio</a>
+                            <a mat-button (click)="goHome()">Inicio</a>
                             <a mat-button (click)="goManage()">Administración Productos</a>
                             <a mat-button>Administración Usuarios</a>
                         </nav>

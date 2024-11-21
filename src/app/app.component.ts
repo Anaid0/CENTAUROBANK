@@ -36,7 +36,25 @@ export class AppComponent {
   goLogin(){
     this.router.navigate(["login"])
   }
+  
   goManage(){
     this.router.navigate(["manageProduct"])
   }
+
+  goRequest(){
+    this.router.navigate(["requestProduct"])
+  }
+
+  goContact(){
+    this.router.navigate(["contactUs"])
+  }
+
+  goRegister(){
+    this.router.navigate(["register"])
+  }
+
+  goForgotPassword(){
+    this.router.navigate(["forgotPassword"])
+  }
+  
 }

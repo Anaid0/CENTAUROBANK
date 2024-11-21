@@ -4,6 +4,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ManageProductsComponent } from './pages/manage-products/manage-products.component';
+import { RequestProductsComponent } from './pages/request-products/request-products.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -23,10 +27,25 @@ const routes: Routes = [
     path: "home",
     component: HomeComponent
   },
-  
   {
     path: "manageProduct",
     component: ManageProductsComponent
+  },
+  {
+    path: "requestProduct",
+    component: RequestProductsComponent
+  },
+  {
+    path: "contactUs",
+    component: ContactUsComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
+  },
+  { 
+    path: "forgotPassword",
+    component: ForgotPasswordComponent
   }
 ];
 
