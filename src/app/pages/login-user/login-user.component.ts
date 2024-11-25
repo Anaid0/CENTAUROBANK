@@ -37,11 +37,18 @@ export class LoginUserComponent {
       this.snackbar.open('Login exitoso.', 'Cerrar', {
         duration: 3000
       })
-      this.goHome();
+      if (this.globalService.getGlobalVariable() == "user-loged"){
+        this.goUser();
+      }
+      else{
+        this.goHome();
+      }
+      
     }
   }
 
   setRole(){
+
     let role = this.globalService.getGlobalVariable();
     if(role == "admin"){
       this.globalService.setGlobalVariable("admin-loged");
@@ -65,5 +72,8 @@ export class LoginUserComponent {
 
   onForgotPassword() {
     this.router.navigate(["forgotPassword"])
+  }
+  goUser(){
+    this.router.navigate(["users"])
   }
 }

@@ -56,5 +56,7 @@ export class AppComponent {
   goForgotPassword(){
     this.router.navigate(["forgotPassword"])
   }
-  
+  goUser(){
+    this.router.navigate(["users"])
+  }
 }
