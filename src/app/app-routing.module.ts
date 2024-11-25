@@ -9,6 +9,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { UsersComponent } from './pages/users/users.component';
+import { MovementsComponent } from './pages/movements/movements.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: "users",
     component: UsersComponent
+  },
+  {
+    path: "movements",
+    component: MovementsComponent
   }
 ];
 

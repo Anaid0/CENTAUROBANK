@@ -14,6 +14,7 @@ import { RequestProductsComponent } from './pages/request-products/request-produ
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { UsersComponent } from './pages/users/users.component';
+import { MovementsComponent } from './pages/movements/movements.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { UsersComponent } from './pages/users/users.component';
     RequestProductsComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    UsersComponent
+    UsersComponent,
+    MovementsComponent
   ],
   imports: [
     BrowserModule,
