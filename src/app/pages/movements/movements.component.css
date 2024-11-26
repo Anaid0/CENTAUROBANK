@@ -47,7 +47,7 @@
   }
   
   /* Botón */
-  .btn-volver {
+  .btutton {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #48c9b0;
@@ -57,7 +57,7 @@
     cursor: pointer;
   }
   
-  .btn-volver:hover {
+  .button {
     background-color: #1abc9c;
   }
   
