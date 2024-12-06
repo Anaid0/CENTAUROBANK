@@ -9,7 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { matSnackBarAnimations, MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -21,7 +22,9 @@ import { matSnackBarAnimations, MatSnackBarModule } from '@angular/material/snac
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule,
@@ -33,7 +36,9 @@ import { matSnackBarAnimations, MatSnackBarModule } from '@angular/material/snac
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }

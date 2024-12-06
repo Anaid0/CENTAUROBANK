@@ -15,6 +15,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { UsersComponent } from './pages/users/users.component';
 import { MovementsComponent } from './pages/movements/movements.component';
+import { ManageUsersComponent } from './pages/manage-users/manage-users.component';
+import { RequestListComponent } from './pages/request-list/request-list.component';
+import { ProductsComponent } from './pages/products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { MovementsComponent } from './pages/movements/movements.component';
     RegisterComponent,
     ForgotPasswordComponent,
     UsersComponent,
-    MovementsComponent
+    MovementsComponent,
+    ManageUsersComponent,
+    RequestListComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -63,4 +63,16 @@ export class AppComponent {
   goMovements(){
     this.router.navigate(["movements"])
   }
+
+  goManageUsers(){
+    this.router.navigate(["manage-users"])
+  }
+
+  goRequests(){
+    this.router.navigate(["requests"])
+  }
+
+  goProducts(){
+    this.router.navigate(["products"])
+  }
 }
