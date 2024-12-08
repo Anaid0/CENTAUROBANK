@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
-  selector: 'app-login-user',
-  templateUrl: './login-user.component.html',
-  styleUrls: ['./login-user.component.css']
+    selector: 'app-login-user',
+    templateUrl: './login-user.component.html',
+    styleUrls: ['./login-user.component.css'],
+    standalone: false
 })
 export class LoginUserComponent {
   loginData = {
@@ -16,7 +18,8 @@ export class LoginUserComponent {
 
   constructor(private snackbar: MatSnackBar,
     private router: Router,
-    public globalService: GlobalService
+    public globalService: GlobalService,
+    public languageService: LanguageService
   ){}
 
   onSubmit() {

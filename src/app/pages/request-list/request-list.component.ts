@@ -4,14 +4,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Request } from 'src/app/interfaces/request.interface';
 import { User } from 'src/app/interfaces/user.interface';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
-  selector: 'app-request-list',
-  templateUrl: './request-list.component.html',
-  styleUrls: ['./request-list.component.css']
+    selector: 'app-request-list',
+    templateUrl: './request-list.component.html',
+    styleUrls: ['./request-list.component.css'],
+    standalone: false
 })
 export class RequestListComponent {
-  constructor(private snackbar: MatSnackBar){}
+  constructor(private snackbar: MatSnackBar,
+    public languageService: LanguageService
+  ){}
 
   displayedColumns: string[] = ['usuario', 'tipoDeSolicitud', 'verSolicitud', 'acciones'];
   dataSource = new MatTableDataSource<Request>([

@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
-  selector: 'app-manage-products',
-  templateUrl: './manage-products.component.html',
-  styleUrls: ['./manage-products.component.css']
+    selector: 'app-manage-products',
+    templateUrl: './manage-products.component.html',
+    styleUrls: ['./manage-products.component.css'],
+    standalone: false
 })
 export class ManageProductsComponent {
   productForm: FormGroup;
   selectedProcess: string = 'Crear';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    public languageService: LanguageService
+  ) {
     this.productForm = this.fb.group({
       productName: ['', Validators.required],
       description: ['', Validators.required],

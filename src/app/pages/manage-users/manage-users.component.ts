@@ -4,15 +4,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
-  selector: 'app-manage-users',
-  templateUrl: './manage-users.component.html',
-  styleUrls: ['./manage-users.component.css']
+    selector: 'app-manage-users',
+    templateUrl: './manage-users.component.html',
+    styleUrls: ['./manage-users.component.css'],
+    standalone: false
 })
 export class ManageUsersComponent {
 
-  constructor(private snackbar: MatSnackBar){}
+  constructor(private snackbar: MatSnackBar,
+    public languageService: LanguageService
+  ){}
 
   displayedColumns: string[] = ['nombre', 'apellido', 'cedula', 'correo', 'acciones'];
   dataSource = new MatTableDataSource<User>([

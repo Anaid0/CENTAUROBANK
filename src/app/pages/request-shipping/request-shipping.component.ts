@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LanguageService } from 'src/app/services/language.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
-    selector: 'app-request-products',
-    templateUrl: './request-products.component.html',
-    styleUrls: ['./request-products.component.css'],
-    standalone: false
+  selector: 'app-request-shipping',
+  templateUrl: './request-shipping.component.html',
+  styleUrl: './request-shipping.component.css',
+  standalone: false
 })
-export class RequestProductsComponent {
+export class RequestShippingComponent {
+  
   solicitudForm: FormGroup;
 
   constructor(private fb: FormBuilder,

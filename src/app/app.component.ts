@@ -1,78 +1,93 @@
 import { Component } from '@angular/core';
 import { GlobalService } from './services/global.service';
 import { Router } from '@angular/router';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: false
 })
 export class AppComponent {
   title = 'centauro';
 
-  constructor(public globalService: GlobalService,
-    private router: Router
-  ){}
+  constructor(
+    public globalService: GlobalService,
+    private router: Router,
+    public languageService: LanguageService
+  ) { }
 
-  userLoged() : boolean {
-    if(this.globalService.getGlobalVariable() == "user-loged") return true;
-    return false;
+  changeLanguage(language: string): void {
+    this.languageService.setLanguage(language);
   }
 
-  adminLoged() : boolean {
-    if(this.globalService.getGlobalVariable() == "admin-loged") return true;
-    return false;
+  goRequestShipping() {
+    this.router.navigate(["requestShipping"]);
   }
 
-  logOut(){
-    this.router.navigate(["login"])
-    this.globalService.setGlobalVariable("")
+  goControlPanel() {
+    this.router.navigate(["panelAdmin"]);
   }
 
-  goHome(){
+  userLoged(): boolean {
+    return this.globalService.getGlobalVariable() === "user-loged";
+  }
+
+  adminLoged(): boolean {
+    return this.globalService.getGlobalVariable() === "admin-loged";
+  }
+
+  logOut() {
+    this.router.navigate(["login"]);
+    this.globalService.setGlobalVariable("");
+  }
+
+  goHome() {
     this.router.navigate(["home"]);
   }
 
-  goLogin(){
-    this.router.navigate(["login"])
-  }
-  
-  goManage(){
-    this.router.navigate(["manageProduct"])
+  goLogin() {
+    this.router.navigate(["login"]);
   }
 
-  goRequest(){
-    this.router.navigate(["requestProduct"])
+  goManage() {
+    this.router.navigate(["manageProduct"]);
   }
 
-  goContact(){
-    this.router.navigate(["contactUs"])
+  goRequest() {
+    this.router.navigate(["requestProduct"]);
   }
 
-  goRegister(){
-    this.router.navigate(["register"])
+  goContact() {
+    this.router.navigate(["contactUs"]);
   }
 
-  goForgotPassword(){
-    this.router.navigate(["forgotPassword"])
-  }
-  goUser(){
-    this.router.navigate(["users"])
+  goRegister() {
+    this.router.navigate(["register"]);
   }
 
-  goMovements(){
-    this.router.navigate(["movements"])
+  goForgotPassword() {
+    this.router.navigate(["forgotPassword"]);
   }
 
-  goManageUsers(){
-    this.router.navigate(["manage-users"])
+  goUser() {
+    this.router.navigate(["users"]);
   }
 
-  goRequests(){
-    this.router.navigate(["requests"])
+  goMovements() {
+    this.router.navigate(["movements"]);
   }
 
-  goProducts(){
-    this.router.navigate(["products"])
+  goManageUsers() {
+    this.router.navigate(["manage-users"]);
+  }
+
+  goRequests() {
+    this.router.navigate(["requests"]);
+  }
+
+  goProducts() {
+    this.router.navigate(["products"]);
   }
 }

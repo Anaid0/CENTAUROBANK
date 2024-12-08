@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
@@ -18,6 +18,15 @@ import { MovementsComponent } from './pages/movements/movements.component';
 import { ManageUsersComponent } from './pages/manage-users/manage-users.component';
 import { RequestListComponent } from './pages/request-list/request-list.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
+import { RequestShippingComponent } from './pages/request-shipping/request-shipping.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +41,9 @@ import { ProductsComponent } from './pages/products/products.component';
     MovementsComponent,
     ManageUsersComponent,
     RequestListComponent,
-    ProductsComponent
+    ProductsComponent,
+    ControlPanelComponent,
+    RequestShippingComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +51,14 @@ import { ProductsComponent } from './pages/products/products.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

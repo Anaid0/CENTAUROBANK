@@ -13,6 +13,8 @@ import { MovementsComponent } from './pages/movements/movements.component';
 import { ManageUsersComponent } from './pages/manage-users/manage-users.component';
 import { RequestListComponent } from './pages/request-list/request-list.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
+import { RequestShippingComponent } from './pages/request-shipping/request-shipping.component';
 
 const routes: Routes = [
   {
@@ -71,6 +73,14 @@ const routes: Routes = [
   {
     path: "products",
     component: ProductsComponent
+  },
+  {
+    path : "panelAdmin",
+    component : ControlPanelComponent
+  },
+  {
+    path : "requestShipping",
+    component : RequestShippingComponent
   }
 ];
 
